@@ -4,7 +4,7 @@ import pandas as pd
 import argparse
 import datetime
 import subprocess
-
+#pull
 
 def format_data(df):
     df["Partes"] = (df["Partes"]
