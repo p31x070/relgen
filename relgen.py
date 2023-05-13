@@ -27,18 +27,20 @@ def format_data(df):
 def generate_report(df, caminho_relatorio):
     with open(caminho_relatorio, "w", encoding="utf-8") as arquivo:
         for index, row in df.iterrows():
+            print("🗞 Notícia Processo Judicial", file=arquivo)
             print("-" * 60, file=arquivo)
-            print("🏛 Número do Processo:", row["Número do Processo"], file=arquivo)
-            print("", row["Título do Processo"], file=arquivo)
-            print("💼 Assunto:", row["Assunto"], file=arquivo)
-            print("👥 Personagens mencionados nos autos:", row["Partes"], file=arquivo)
+            print(f"🏛 Número do Processo:", row["Número do Processo"], file=arquivo)
+            print(f"", row["Título do Processo"], file=arquivo)
+            print(f"💼 Assunto:", row["Assunto"], file=arquivo)
+            print(f"👥 Personagens mencionados nos autos:", row["Partes"], file=arquivo)
             print("-" * 55, file=arquivo)
-            print("📅 Data do Último Andamento:", row["Data do Último Andamento"], file=arquivo)
+            print(f"📅 Data do Último Andamento:", row["Data do Último Andamento"], file=arquivo)
             print(f"💬 Último Andamento: {row['Último Andamento']}", file=arquivo)
             print("-" * 60, file=arquivo)
             print("\n" * 2, file=arquivo)
-
-        print("""Saudações,\n ✨ luiz@peixoto.cc ✨""", file=arquivo)
+            print("""Saudações,\n
+                        
+                             ✨ luiz@peixoto.cc ✨\n\n""", file=arquivo)
 
 
 def main():
